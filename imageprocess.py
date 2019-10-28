@@ -1,7 +1,7 @@
 import cv2
 import os
 
-def _compress_image(file_path, quality):
+def compress_image(file_path, quality):
     """ A method that compress an image from given path, then overwrite the image.
 
     Args:
