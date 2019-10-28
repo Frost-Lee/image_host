@@ -19,13 +19,12 @@ def response_bloghost():
     data_manager = datamanager.DataManager(files['image'], config.BLOG_CONTAINER_PATH)
     data_manager.save()
     if files['image'].filename.split('.')[1] in config.COMPRESSIBLE_FORMATS:
-        imageprocess.compress_image(data_manager.path(), args['compress_quality'])
+        imageprocess.compress_image(data_manager.path(), int(args['compress_quality']))
     return data_manager.file_name()
 
 @app.route('/bloghost/<path:filename>', methods=['GET', 'POST'])
 def response_bloghost_fetch(filename):
     return flask.send_from_directory(config.BLOG_CONTAINER_PATH, filename)
-
 
 
 if __name__ == '__main__':

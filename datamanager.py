@@ -22,17 +22,18 @@ class DataManager(object):
         self.uuid = shortuuid.uuid()
         self.file = file
         self.container_path = container_path
-        os.makedirs(self.container_path)
+        if not os.path.exists(self.container_path):
+            os.makedirs(self.container_path)
     
     def save(self):
         """ Save the file instance to the saving directory.
         """
-        file.save(self.path())
+        self.file.save(self.path())
     
     def file_name(self):
         """ Get the name of the file.
         """
-        return self.uuid + file.filename.split('.')[0]
+        return '{}.{}'.format(self.uuid, self.file.filename.split('.')[1])
 
     def path(self):
         """ Get the file saving path.
