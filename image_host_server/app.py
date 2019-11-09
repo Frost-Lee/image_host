@@ -22,7 +22,7 @@ def _save_image(container_path, path_extension):
         return random.choice(config.CURSES)
     if args['token'] not in config.ACCEPTED_TOKENS:
         return random.choice(config.CURSES)
-    if len(files['image'].filename.split('.')) != 2 or files['image'].filename.split('.')[1].lower() not in config.ACCEPTED_FORMATS:
+    if files['image'].filename.split('.')[-1].lower() not in config.ACCEPTED_FORMATS:
         return 'Wrong image format.'
     data_manager = datamanager.DataManager(files['image'], container_path)
     data_manager.save()

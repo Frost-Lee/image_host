@@ -33,10 +33,9 @@ class DataManager(object):
     def file_name(self):
         """ Get the name of the file.
         """
-        return '{}.{}'.format(self.uuid, self.file.filename.split('.')[1])
+        return '{}.{}'.format(self.uuid, self.file.filename.split('.')[-1])
 
     def path(self):
         """ Get the file saving path.
         """
         return os.path.join(self.container_path, self.file_name())
-

@@ -51,5 +51,8 @@ with open(args.file, 'rb') as in_file:
     )
     print(response.text)
     os.system('echo {} | pbcopy'.format(response.text))
-    file_name = response.text.split('/')[-1]
-    shutil.copyfile(args.file, os.path.join(os.path.dirname(args.file), file_name))
+    if '/' not in response.text:
+        pass
+    else:
+        file_name = response.text.split('/')[-1]
+        shutil.copyfile(args.file, os.path.join(os.path.dirname(args.file), file_name))
