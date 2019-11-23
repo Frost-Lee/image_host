@@ -36,6 +36,6 @@ python3 image_host_client/image_upload.py -h
 ## To Do List
 
 - [ ] Make the client application a menu bar macOS application
-- [ ] Embed database
+- [ ] Database and better local file saving
 - [ ] Compressing .png images
 - [ ] Use HTTPS on the server application
