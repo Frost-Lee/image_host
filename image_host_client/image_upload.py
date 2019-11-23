@@ -6,6 +6,8 @@ import argparse
 import os
 import shutil
 
+import config_secure
+
 arg_parser = argparse.ArgumentParser(
     description='Client application for uploading image to image host.'
 )
@@ -19,14 +21,14 @@ arg_parser.add_argument(
     '--url', 
     help='URL address of upload server.', 
     type=str,
-    default='http://144.202.103.127:1910/bloghost'
+    default=config_secure.DEFAULT_URL
 )
 arg_parser.add_argument(
     '-t',
     '--token', 
     help='Token of the session.', 
     type=str,
-    default='hcuygaukhhrzyriu'
+    default=config_secure.DEFAULT_TOKEN
 )
 arg_parser.add_argument(
     '-q',
