@@ -39,3 +39,10 @@ python3 image_host_client/image_upload.py -h
 - [ ] Database and better local file saving
 - [ ] Compressing .png images
 - [ ] Use HTTPS on the server application
+
+
+
+## Donation
+
+If you are purchasing a server instance from [VULTR](https://www.vultr.com), you can go via my linking code: https://www.vultr.com/?ref=8304275-4F.
+
