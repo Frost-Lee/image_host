@@ -6,13 +6,13 @@ import config_secure
 import datamanager
 import imageprocess
 
-app = flask.Flask(__name__)
+application = flask.Flask(__name__)
 
-@app.route('/bloghost', methods=['GET', 'POST'])
+@application.route('/bloghost', methods=['GET', 'POST'])
 def response_bloghost():
     return _save_image(config_secure.BLOG_CONTAINER_PATH, 'bloghost')
 
-@app.route('/bloghost/<path:filename>', methods=['GET', 'POST'])
+@application.route('/bloghost/<path:filename>', methods=['GET', 'POST'])
 def response_bloghost_fetch(filename):
     return flask.send_from_directory(config_secure.BLOG_CONTAINER_PATH, filename)
 
@@ -38,4 +38,4 @@ def _save_image(container_path, path_extension):
 
 
 if __name__ == '__main__':
-    app.run(debug=False, host='0.0.0.0', port=config_secure.DEPLOY_PORT)
+    application.run()
