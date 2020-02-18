@@ -22,7 +22,8 @@ To configure this system, rename all files named `config_secure.example.py` to `
 To start the image host server, use the following command.
 
 ``` shell
-nohup python3 image_host_server/app.py &
+cd image_host_server/
+nohup gunicorn --bind 0.0.0.0:1910 app
 ```
 
 Use the following command to see the detailed instructions for uploading an image.
