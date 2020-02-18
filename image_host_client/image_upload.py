@@ -1,5 +1,3 @@
-#!/usr/local/bin/python3
-
 import requests
 import re
 import argparse
@@ -19,7 +17,7 @@ arg_parser.add_argument(
 arg_parser.add_argument(
     '-u',
     '--url', 
-    help='URL address of upload server.', 
+    help='URL address of uploading destination.', 
     type=str,
     default=config_secure.DEFAULT_URL
 )
@@ -53,8 +51,6 @@ with open(args.file, 'rb') as in_file:
     )
     print(response.text)
     os.system('echo {} | pbcopy'.format(response.text))
-    if '/' not in response.text:
-        pass
-    else:
+    if '/' in response.text:
         file_name = response.text.split('/')[-1]
         shutil.copyfile(args.file, os.path.join(os.path.dirname(args.file), file_name))

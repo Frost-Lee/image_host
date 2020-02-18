@@ -29,8 +29,14 @@ def _save_image(container_path, path_extension):
     data_manager.save()
     if files['image'].filename.split('.')[1] in config.COMPRESSIBLE_FORMATS:
         imageprocess.compress_image(data_manager.path(), int(args['compress_quality']))
-    return 'http://{}:{}/{}/{}'.format(config_secure.EXTERNAL_IP, config_secure.DEPLOY_PORT, path_extension, data_manager.file_name())
+    return 'http://{}:{}/{}/{}'.format(
+        config_secure.EXTERNAL_IP, 
+        config_secure.DEPLOY_PORT, 
+        path_extension, 
+        data_manager.file_name()
+    )
 
 
 if __name__ == '__main__':
     application.run()
+

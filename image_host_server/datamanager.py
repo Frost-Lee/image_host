@@ -28,14 +28,15 @@ class DataManager(object):
     def save(self):
         """ Save the file instance to the saving directory.
         """
+        assert not os.path.exists(self.path()), "`save` should only be called once."
         self.file.save(self.path())
     
     def file_name(self):
-        """ Get the name of the file.
+        """ Get the name of the file, including the extension.
         """
         return '{}.{}'.format(self.uuid, self.file.filename.split('.')[-1])
 
     def path(self):
-        """ Get the file saving path.
+        """ Get the absolute path of the file.
         """
         return os.path.join(self.container_path, self.file_name())

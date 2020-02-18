@@ -1,2 +1,4 @@
 .DS_Store
 *.pyc
+config_secure.py
+
