@@ -38,4 +38,4 @@ def _save_image(container_path, path_extension):
 
 
 if __name__ == '__main__':
-    application.run()
+    application.run(host='0.0.0.0', port=config.DEPLOY_PORT)
