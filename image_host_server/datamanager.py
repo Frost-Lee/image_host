@@ -28,7 +28,8 @@ class DataManager(object):
     def save(self):
         """ Save the file instance to the saving directory.
         """
-        assert not os.path.exists(self.path()), "`save` should only be called once."
+        assert not os.path.exists(self.path()), '`save` should only be called once.'
+        print('file saved at', self.path())
         self.file.save(self.path())
     
     def file_name(self):

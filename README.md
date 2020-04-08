@@ -23,7 +23,7 @@ To start the image host server, use the following command.
 
 ``` shell
 cd image_host_server/
-nohup gunicorn --bind 0.0.0.0:1910 app
+nohup gunicorn --bind 0.0.0.0:1910 app &
 ```
 
 Use the following command to see the detailed instructions for uploading an image.
