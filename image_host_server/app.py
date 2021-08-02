@@ -38,4 +38,9 @@ def _save_image(container_path, path_extension):
 
 
 if __name__ == '__main__':
-    application.run(host='0.0.0.0', port=config_secure.DEPLOY_PORT)
+    # gunicorn --certfile /etc/letsencrypt/live/tsanchenli.com/fullchain.pem --keyfile /etc/letsencrypt/live/tsanchenli.com/privkey.pem --workers 4 --bind 0.0.0.0:1910 app
+    application.run(
+        host='0.0.0.0',
+        port=config_secure.DEPLOY_PORT,
+        ssl_context='adhoc'
+    )
